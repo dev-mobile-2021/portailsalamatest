@@ -1,0 +1,337 @@
+html,
+body,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    color: var(--noir);
+}
+
+
+h1 {
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 75px;
+    font-size: 50px;
+}
+
+h2 {
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 38px;
+    font-size: 38px;
+}
+
+h3 {
+    font-family: "Montserrat",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 34px;
+    font-size: 35px;
+}
+
+h4,
+h5,
+h6 {
+    font-family: "Montserrat",sans-serif;
+    color: var(--noir);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 28px;
+    font-size: 28px;
+}
+
+
+p,
+span {
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--noir);
+}
+
+
+.p {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    text-align: left !important;
+    color: white !important;
+}
+
+
+
+a {
+    font-family: "Montserrat",sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--theme);
+    font-size: 14px;
+    font-style: normal;
+    line-height: 14px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: var(--noir);
+}
+
+
+a,
+button {
+    font-size: 1rem;
+    touch-action: manipulation;
+}
+
+/* H1 - Le titre principal */
+.h1 {
+    color: var(--theme);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 45px !important;
+    font-weight: 700 !important;
+    line-height: 60px !important;
+    position: relative;
+    display: inline-block;
+}
+
+.h1::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--theme_claire);
+}
+
+
+.h2 {
+    display: inline-block;
+    color: var(--theme_claire);
+    text-transform: capitalize;
+    text-align: left;
+    border-left: 5px solid var(--theme);
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+/* Souligner 1/4 du texte */
+.h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 2px;
+    background-color: var(--theme);
+}
+
+
+
+/* H3 - Titres secondaires */
+.h3 {
+    color: var(--noir);
+    text-transform: none;
+    text-align: left;
+    border-bottom: 1px dotted var(--gris);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+/* H4 - Titres tertiaires */
+.h4 {
+    color: var(--theme);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 3rem;
+    text-transform: uppercase;
+
+}
+
+.h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--theme);
+    border-radius: 2px;
+}
+
+
+/* H5 et H6 - Titres de moindre importance */
+.h5,
+.h6 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--gris);
+    text-transform: none;
+    margin-bottom: 0.5rem;
+}
+
+.text-theme {
+    color: var(--theme) !important;
+}
+
+
+button,
+button:focus,
+button:active,
+button:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+
+button {
+    font-family: 'Poppins', sans-serif;
+    background: var(--theme);
+    color: var(--noir);
+    font-weight: 600;
+    padding: 36px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: var(--theme_claire) !important;
+    color: var(--noir) !important;
+}
+
+
+
+
+.offcanvas-header .btn-close,
+.modal-header .btn-close {
+    background: transparent !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.offcanvas-header .btn-close::after,
+.modal-header .btn-close::after {
+    content: "×";
+    font-size: 22px;
+    font-weight: bold;
+    color: black !important;
+}
+
+.offcanvas-header .btn-close:hover,
+.modal-header .btn-close:hover {
+    background: rgba(0, 0, 0, 0.1) !important;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .h1 {
+        font-size: 1.8rem;
+    };
+    h2{
+        font-size: 1.5rem;
+        margin-top: 5rem !important;
+    }
+}
+
+
+
+
+.btn-button,
+.btn-wishlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-button {
+    background-color: var(--theme);
+    color: white;
+}
+
+.btn-button:hover {
+    background-color: var(--theme_claire) !important;
+    color: white !important;
+}
+
+.btn-wishlist {
+    background-color: #B5B7BE !important;
+    color: var(--theme);
+    border:none !important;
+}
+
+.btn-wishlist:hover {
+    background-color: var(--theme_claire);
+    color: white;
+}
+
+
+
+
+.search-input {
+    border: 1px solid var(--theme) !important;
+    transition: border 0.1s ease-in-out !important;
+    background:  var(--theme_blur) !important;
+}
+
+input,
+input:focus,
+input:active {
+    border: 1px solid var(--theme_claire);
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border 0.3s ease-in-out;
+    accent-color: var(--theme_claire) !important;
+}
+
+
+input:focus,
+input:active,
+input:focus-visible {
+    box-shadow: none !important;
+    border: 0px solid var(--theme_claire);
+    transition: border 0.3s ease-in-out;
+}

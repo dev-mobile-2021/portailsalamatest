@@ -1,0 +1,155 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.messages-chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px 35px;
+    max-height: calc(100vh - 90px);
+    /* Ajustement pour ne pas dépasser la hauteur de l'écran */
+}
+
+.footer-chat {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #f9f9f9;
+    border-top: 2px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-chat form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-chat .write-message {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.footer-chat .write-message:focus {
+    border-color: #4f6ebd;
+    box-shadow: 0 0 5px rgba(79, 110, 189, 0.5);
+}
+
+.footer-chat button {
+    background: #4f6ebd;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    margin-left: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-chat button:hover {
+    background: #3c569b;
+}
+
+.footer-chat button::before {
+    content: "➤";
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chat .messages-chat .message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.chat .messages-chat .message .photo {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #E6E7ED;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0; /* Empêche l'image de se rétrécir lorsque le texte est long */
+}
+
+.chat .messages-chat .text {
+    margin-left: 15px; /* Espace entre l'image et le texte */
+    background-color: #f6f6f6;
+    padding: 15px;
+    border-radius: 12px;
+    flex-grow: 1; /* Le texte peut s'étendre et prendre plus d'espace */
+}
+
+
+.text-only {
+    margin-left: 45px;
+}
+
+.time {
+    font-size: 10px;
+    color: lightgrey;
+    margin-bottom: 10px;
+    margin-left: 85px;
+}
+
+.response-time {
+    float: right;
+    margin-right: 40px !important;
+}
+
+.response {
+    float: right;
+    margin-right: 0px !important;
+    margin-left: auto;
+    /* flexbox alignment rule */
+}
+
+.response .text {
+    background-color: #e3effd !important;
+}
+
+
+
+.clickable {
+    cursor: pointer;
+}
+
+.write-message {
+    border: none !important;
+    width: 80%;
+    height: 50px;
+    margin-left: 20px;
+    padding: 10px;
+}

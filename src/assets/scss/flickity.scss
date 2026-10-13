@@ -1,0 +1,154 @@
+@import "./var.scss";
+
+/* Button smaller, rounded, with a specific color */
+.flickity-button {
+  background: var(--bleu) !important;
+  font-size: 10px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 3px !important;
+}
+
+/* Button hover effect */
+.flickity-button:hover {
+  background: var(--rougeclaire) !important;
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: -40px !important;
+}
+
+
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 2px solid var(--theme) !important;
+}
+
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: var(--theme_claire) !important;
+}
+
+/* Adjust the icon size and color */
+.flickity-button-icon {
+  font-size: 14px !important;
+  fill: var(--gris) !important;
+}
+
+/* Positioning the previous and next buttons outside the carousel */
+.flickity-prev-next-button.previous {
+  left: -30px !important;
+}
+
+.flickity-prev-next-button.next {
+  right: -30px !important;
+}
+
+
+
+
+.flickity-enabled {
+  inline-size: 100% !important;
+  block-size: 100% !important;
+
+}
+
+.flickity-viewport {
+  inline-size: 100% !important;
+  margin: 0 !important;
+}
+
+.flickity-slider {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin: 0px 0 30px 0px !important;
+}
+
+
+.flickity-enabled .carousel-cell {
+  position: relative;
+  flex: 0 0 auto;
+  inline-size: 210px;
+  block-size: 120px;
+  margin-inline-end: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  text-align: center;
+  border: 2px solid var(--theme_claire);
+  border-radius: 15px;
+  background-color: white;
+  cursor: pointer !important;
+}
+
+.flickity-enabled .carousel-cell.is-selected {
+  border: 4px solid var(--theme) !important;
+}
+
+
+
+.image-wrapper {
+  position: relative;
+  inline-size: 100%;
+  block-size: 140px;
+}
+
+.image-wrapper img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Ajout d'un fond semi-transparent derrière le texte */
+.carousel-cell-name {
+  position: absolute;
+  inline-size: 100%;
+  padding: 2px 0px;
+  background: transparent;
+  color: var(--noir);
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+/* Small screen styles */
+@media (max-width: 576px) {
+  .carousel-cell {
+    inline-size: 40% !important;
+  }
+
+  .carousel-cell img {
+    block-size: 100% !important;
+  }
+
+  .carousel-cell-name {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+/* Medium screen styles */
+@media (max-width: 768px) {
+  .carousel-cell {
+    width: 40% !important;
+  }
+
+  .carousel-cell img {
+    height: 100%;
+  }
+}

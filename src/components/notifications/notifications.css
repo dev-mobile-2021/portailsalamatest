@@ -1,0 +1,319 @@
+/* ========================================
+   Notification Bell Container
+   ======================================== */
+.notification-bell-container {
+  position: relative;
+}
+
+.notification-bell-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #198754;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notification-bell-btn:hover {
+  background: rgba(25, 135, 84, 0.1);
+  transform: scale(1.05);
+}
+
+.notification-bell-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   Notification Badge
+   ======================================== */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(220, 53, 69, 0.4);
+  animation: badge-pulse 2s infinite;
+}
+
+@keyframes badge-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ========================================
+   Notification Dropdown
+   ======================================== */
+.notification-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 380px;
+  max-width: 95vw;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
+    0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1002;
+  overflow: hidden;
+  animation: dropdown-slide-in 0.2s ease-out;
+}
+
+@keyframes dropdown-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Dropdown Header
+   ======================================== */
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.notification-header-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.notification-mark-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #198754;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-mark-all-btn:hover {
+  background: rgba(25, 135, 84, 0.1);
+}
+
+/* ========================================
+   Dropdown Body
+   ======================================== */
+.notification-body {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #dee2e6 transparent;
+}
+
+.notification-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notification-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notification-body::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 3px;
+}
+
+/* ========================================
+   Notification Group
+   ======================================== */
+.notification-group {
+  padding: 8px 0;
+}
+
+.notification-group:not(:last-child) {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.notification-group-label {
+  padding: 8px 20px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+}
+
+/* ========================================
+   Notification Item
+   ======================================== */
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 20px;
+  margin: 4px 12px;
+  border-radius: 12px;
+  border-left: 4px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-item.unread {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.notification-item.read {
+  background: transparent;
+  border-left-color: #e9ecef !important;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+  transform: translateX(2px);
+}
+
+/* ========================================
+   Notification Icon
+   ======================================== */
+.notification-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/* ========================================
+   Notification Content
+   ======================================== */
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.notification-reference {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6c757d;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.notification-message {
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #adb5bd;
+}
+
+/* ========================================
+   Empty State
+   ======================================== */
+.notification-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #adb5bd;
+}
+
+.notification-empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ========================================
+   Dropdown Footer
+   ======================================== */
+.notification-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.notification-view-all {
+  font-size: 14px;
+  font-weight: 500;
+  color: #198754;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.notification-view-all:hover {
+  color: #146c43;
+  text-decoration: underline;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 480px) {
+  .notification-dropdown {
+    width: calc(100vw - 20px);
+    right: -10px;
+  }
+
+  .notification-item {
+    padding: 12px 16px;
+    margin: 4px 8px;
+  }
+
+  .notification-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -1,0 +1,130 @@
+:root {
+  --theme: #1FB05B;
+  --theme_claire: #F18533;
+  --theme_blur: #F6F6F6;
+  --theme_sombre: #B5B5C3;
+  --gray: #6F6E79;
+  --noir: #000000;
+  --blanc: #fff;
+  --gradiant: linear-gradient(114.83deg, rgba(31, 176, 91, 0.5) 0.8%, rgba(31, 176, 91, 0) 101.31%);
+  --gradiant_btn: linear-gradient(280.19deg, #F18533 -27.33%, #1FB05B 127.86%);
+
+
+
+  --padding: 2rem;
+  --whatsapp-color: #25d366;
+  --whatsapp-text: #ffffff;
+  --mt: 6rem;
+  --mt5: 5rem;
+  --mtp: 5rem;
+  --mb: 5rem;
+  --mbf: 12rem;
+  --mt5: 5rem;
+}
+
+
+.bg-gray {
+  background-color: var(--gray);
+}
+.bg-white-ligth{
+  background-color: #f6f6f64e;
+}
+.bg-blanc {
+  background-color: rgba(255, 255, 255, 0.32) !important;
+}
+
+.bg-theme {
+  background-color: var(--theme);
+}
+
+.border-theme {
+  border: 2px solid var(--theme);
+}
+
+.text-theme {
+  color: var(--theme);
+}
+
+.text-theme-claire {
+  color: var(--theme_claire);
+}
+
+.bg-theme-claire {
+  background-color: var(--theme_claire);
+}
+
+.bg-theme-sombre {
+  background-color: var(--theme_sombre);
+}
+
+.bg-gradiant {
+  background: var(--gradiant);
+  // blur
+  // filter: blur(1px);
+
+}
+
+.bg-gradiant-btn {
+  background: var(--gradiant_btn);
+}
+
+.bg-green_ligth {
+  background: rgba(198, 255, 222, 1);
+
+}
+
+.bg-theme-noir {
+  background-color: var(--noir);
+}
+
+.border-noir {
+  border: 6px solid var(--noir);
+}
+
+.border-right {
+  border-right: 1px solid var(--theme_sombre);
+}
+
+.bg-theme-blur {
+  background-color: var(--theme_blur);
+}
+
+.accordion-item {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button {
+  background-color: transparent;
+  box-shadow: none;  padding-left: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  appearance: none;
+  color: var(--theme);
+  background-color: #F6F6F6;
+}
+.checkbox input[type="checkbox"]:checked {
+  background-color: var(--theme);
+  border: none;
+}
+
+.accordion-body {
+  padding: 0;
+}
+
+.greenSadow{-webkit-box-shadow: 0px 100px 100px -39px rgba(143, 255, 189, 0.58);
+-moz-box-shadow: 0px 100px 100px -39px rgba(143, 255, 189, 0.58);
+box-shadow: 0px 100px 100px -39px rgba(143, 255, 189, 0.58);
+}
+

@@ -1,0 +1,210 @@
+// /* Style du menu déroulant */
+// .dropdown-menu {
+//   background-color: white !important;
+//   border: none !important;
+//   border-radius: 0px !important;
+//   position: relative;
+//   margin: 0 !important;
+//   padding: 0 !important;
+//   margin-top: 15px !important;
+// }
+
+// /* Flèche pointant vers le parent */
+// .dropdown-menu::after {
+//   content: "" !important;
+//   position: absolute !important;
+//   top: -12px !important;
+//   left: 10% !important;
+//   transform: translateX(-10%) !important;
+//   width: 0;
+//   height: 0;
+//   border-left: 7px solid transparent !important;
+//   border-right: 7px solid transparent !important;
+//   border-bottom: 14px solid white !important;
+//   z-index: -1;
+// }
+
+// /* Items dans le menu */
+// .dropdown-item {
+//   color: var(--noir) !important;
+//   padding: 0.75rem 1.5rem !important;
+//   display: flex !important;
+//   align-items: center !important;
+//   border-top: 1px solid var(--theme) !important;
+//   font-size: 14px !important;
+// }
+
+// /* Première item, sans bordure en haut */
+// .dropdown-item:first-child {
+//   border-top: none !important;
+// }
+
+// /* Réduction de la taille de l'icône flèche */
+// .dropdown-item .icon {
+//   font-size: 12px !important;
+//   margin-right: 8px !important;
+// }
+
+
+// /* Style au survol des éléments */
+// .dropdown-item:hover {
+//   background-color: var(--theme_claire) !important;
+// }
+
+// .dropdown-item:active {
+//   background-color: var(--theme_claire) !important;
+// }
+
+
+
+
+
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Style du menu déroulant */
+.nav-item.has-submenu {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item .submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: var(--theme_sombre) !important;
+  min-width: 260px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Flèche pointant vers le parent */
+.submenu::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -7px;
+  transform: translateY(-50%);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid var(--noir);
+}
+
+.nav-custom {
+  margin: 0px;
+  padding: 0.4rem 0px;
+  color: white !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px !important;
+  text-decoration: none !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  position: relative;
+  border-bottom: 1px solid white !important;
+  background-color: var(--noir);
+  display: flex;
+  /* Activer Flexbox */
+  align-items: center;
+  /* Centrer verticalement */
+  justify-content: space-between;
+  /* Espacer les éléments */
+}
+
+.nav-custom:hover {
+  color: var(--theme) !important;
+}
+
+/* Style pour l'image */
+.nav-custom img {
+  margin-right: 10px;
+  /* Espace entre l'image et le texte */
+  width: 24px;
+  /* Taille de l'image */
+  height: 24px;
+}
+
+/* Style pour la flèche */
+.nav-custom svg {
+  margin-left: auto;
+  /* Pousser la flèche à droite */
+}
+
+.nav-link.active.nav-custom {
+  color: var(--theme) !important;
+}
+
+.icons-header {
+  font-size: 10px !important;
+  margin-left: 3px !important;
+  font-weight: bold;
+}
+
+
+
+/* ecommerce nav*/
+.custom-navbar {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.site-logo {
+  height: 35px;
+  object-fit: contain;
+}
+
+  @media (max-width: 576px) {
+   .site-logo {
+      height: 25px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+.icon-link {
+  position: relative;
+  color: var(--noir);
+  transition: color 0.3s ease-in-out;
+}
+
+.icon-link:hover {
+  color: var(--theme_sombre);
+}
+
+.icon-link .icon-badge {
+  position: absolute;
+  top: -7px;
+  right: -14px;
+  font-size: 12px;
+  background-color: var(--theme_sombre) !important;
+  color: var(--theme);
+  border: 2px solid white;
+}
+
+.user-menu-card {
+  top: 45px;
+  right: 0;
+  min-width: 250px;
+  border-radius: 10px;
+  z-index: 1000;
+  background: white;
+}
+
+.user-menu-card p {
+  font-size: 14px;
+}

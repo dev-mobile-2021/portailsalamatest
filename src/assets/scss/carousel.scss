@@ -1,0 +1,125 @@
+/* Styles du carrousel */
+.carousel.small {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Hauteur égale à son parent */
+  overflow: hidden;
+}
+
+.carousel-item {
+  block-size: 100%;
+  inline-size: 100% !important;
+}
+
+.carousel-item video,
+.carousel-item img {
+  height: 100%;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.custom-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 50%;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .custom-caption {
+    bottom: 30%;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .custom-caption h2 {
+    font-size: 16px;
+  }
+
+  .custom-caption-b {
+    top: 250px;
+  }
+
+  .custom-caption-c {
+    top: 300px;
+  }
+}
+
+.prev-img-custom,
+.next-img-custom {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel .carousel-indicators {
+  position: absolute;
+  top: 60%;
+  right: 0%;
+  left: 80%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  margin: 5px 0;
+  background-color: #fff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #fff;
+  border: 3px solid var(--theme);
+  opacity: 1;
+}
+
+.carousel .carousel-indicators button:hover {
+  opacity: 0.9;
+  background-color: var(--theme_secondaire);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 2rem;
+  }
+
+  .carousel.small {
+    width: 100% !important;
+  }
+
+  .carousel-item {
+    block-size: 50vh !important;
+    /* Hauteur fixée */
+    inline-size: 100% !important;
+  }
+
+  .carousel-item video,
+  .carousel-item img {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .categories-carrousel {
+    height: 100% !important;
+  }
+
+}

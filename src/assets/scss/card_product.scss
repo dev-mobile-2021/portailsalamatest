@@ -1,0 +1,201 @@
+.card-product {
+    block-size: 100%;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background: var(--theme_blur);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.card-product:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+.section-img {
+    position: relative;
+    block-size: 100%;
+    inline-size: 250px;
+    overflow: hidden;
+    background-color: var(--theme_blur);
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+
+.section-img img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+
+.section-img:hover img {
+    transform: scale(1.1);
+}
+
+.card-info {
+    background: var(--blanc);
+    flex: 1;
+}
+
+
+.card-footer {
+    background-color: var(--theme_claire);
+    border-end-start-radius: 25px;
+    border-end-end-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.card-info-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-cart,
+.icon-heart {
+    font-size: 16px;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon-cart {
+    background-color: var(--noir);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.icon-heart {
+    margin-left: 6px;
+    border: 2px solid var(--theme_claire);
+}
+
+.icon-cart:hover {
+    background-color: var(--theme_claire);
+    transform: scale(1.1);
+    /* Effet d'agrandissement au survol */
+}
+
+.icon-heart:hover {
+    background-color: var(--theme_claire);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.info-sup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--theme);
+    color: var(--noir);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 50%;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Pour les écrans très petits (mobile) */
+@media (max-width: 576px) {
+  
+    .section-img {
+        height: 160px !important;
+        display: flex;
+        
+    }
+    .section-img img {
+        height: 100%;
+        object-fit: contain;
+    }
+    .card-footer p {
+        font-size: 14px;
+    }
+    .card-footer p span{
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .info-sup {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+/* Pour les écrans un peu plus grands (tablettes) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .card-product {
+        width: 100% !important;
+        max-width: 220px;
+    }
+}
+
+
+
+
+
+/* Pour les cartes en mode paysage */
+
+.card-product-small {
+    block-size: 100%;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background: white;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin: 5px;
+    /* Ajouter une marge entre les cartes */
+}
+
+.card-product-small .section-img {
+    height: 150px;
+    /* Réduire la hauteur de l'image */
+}
+
+.card-product-small .card-info {
+    padding: 10px;
+    /* Réduire le padding */
+}
+.card-product-small .card-footer p span {
+    font-size: 10px;
+}
+
+.card-product-small .icon-cart,
+.card-product-small .icon-heart {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    /* Réduire la taille de la police */
+}
+
+@media (max-width: 576px) {
+    .card-product-small {
+        inline-size: 100%;
+    }
+}
