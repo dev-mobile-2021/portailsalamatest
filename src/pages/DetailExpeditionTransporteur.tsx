@@ -213,7 +213,7 @@ const DetailExpeditionTransporteur = () => {
     console.log(`[UploadDocument] Uploading ${documentType} for client ${expeditionClientId}`);
 
     try {
-      const response = await fetch('https://backsignup.h-tsoft.com//expedition/upload-document', {
+      const response = await fetch('https://backsignup.h-tsoft.com/expedition/upload-document', {
         method: 'POST',
         body: formData,
       });
@@ -317,7 +317,7 @@ const DetailExpeditionTransporteur = () => {
     setDownloadingPdf(true);
     try {
       const response = await fetch(
-        `https://backsignup.h-tsoft.com//pdf.generate-pdf-bcfournisseur/${mission.expedition_id}/${user.fournisseur_id}`,
+        `https://backsignup.h-tsoft.com/pdf.generate-pdf-bcfournisseur/${mission.expedition_id}/${user.fournisseur_id}`,
         {
           method: "GET",
           headers: { Accept: "application/pdf" },
@@ -380,7 +380,7 @@ const DetailExpeditionTransporteur = () => {
     }
     setDownloadingOM(true);
     try {
-      const url = `https://backsignup.h-tsoft.com//pdf.generate-pdf-bctransporteur/${mission.axe.id}/${mission.chauffeur.id}`;
+      const url = `https://backsignup.h-tsoft.com/pdf.generate-pdf-bctransporteur/${mission.axe.id}/${mission.chauffeur.id}`;
       await downloadDocument(url, `OM-Chauffeur-${mission.chauffeur.nom}-${mission.code}.pdf`);
     } finally {
       setDownloadingOM(false);
@@ -389,25 +389,25 @@ const DetailExpeditionTransporteur = () => {
 
   const handleDownloadPVRD = () => {
     if (!mission?.axe?.id || !mission?.chauffeur?.id) return;
-    const url = `https://backsignup.h-tsoft.com//pdf.generate-pdf-pvrd-chauffeur/${mission.axe.id}/${mission.chauffeur.id}`;
+    const url = `https://backsignup.h-tsoft.com/pdf.generate-pdf-pvrd-chauffeur/${mission.axe.id}/${mission.chauffeur.id}`;
     downloadDocument(url, `PVRD-${mission.code}.pdf`);
   };
 
   const handleDownloadBonRetour = () => {
     if (!mission?.axe?.id || !mission?.chauffeur?.id) return;
-    const url = `https://backsignup.h-tsoft.com//pdf.generate-pdf-bonretour-chauffeur/${mission.axe.id}/${mission.chauffeur.id}`;
+    const url = `https://backsignup.h-tsoft.com/pdf.generate-pdf-bonretour-chauffeur/${mission.axe.id}/${mission.chauffeur.id}`;
     downloadDocument(url, `BonRetour-${mission.code}.pdf`);
   };
 
   const handleDownloadFichePointage = () => {
     if (!mission?.axe?.id || !mission?.chauffeur?.id) return;
-    const url = `https://backsignup.h-tsoft.com//pdf.generate-pdf-fichepointage/${mission.axe.id}/${mission.chauffeur.id}`;
+    const url = `https://backsignup.h-tsoft.com/pdf.generate-pdf-fichepointage/${mission.axe.id}/${mission.chauffeur.id}`;
     downloadDocument(url, `FichePointage-${mission.code}.pdf`);
   };
 
   const handleDownloadBLTransporteur = () => {
     if (!mission?.id) return;
-    const url = `https://backsignup.h-tsoft.com//pdf.generate-pdf-bl-transporteur/${mission.id}`;
+    const url = `https://backsignup.h-tsoft.com/pdf.generate-pdf-bl-transporteur/${mission.id}`;
     downloadDocument(url, `BL-Transporteur-${mission.code}.pdf`);
   };
 
@@ -423,7 +423,7 @@ const DetailExpeditionTransporteur = () => {
       
       console.log("[AcceptMission] Appel API /expeditionaxetransporteur/validation-fournisseur:", payload);
       
-      const response = await fetch('https://backsignup.h-tsoft.com//expeditionaxetransporteur/validation-fournisseur', {
+      const response = await fetch('https://backsignup.h-tsoft.com/expeditionaxetransporteur/validation-fournisseur', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -475,7 +475,7 @@ const DetailExpeditionTransporteur = () => {
       
       console.log("[RejectMission] Appel API /expeditionaxetransporteur/validation-fournisseur:", payload);
       
-      const response = await fetch('https://backsignup.h-tsoft.com//expeditionaxetransporteur/validation-fournisseur', {
+      const response = await fetch('https://backsignup.h-tsoft.com/expeditionaxetransporteur/validation-fournisseur', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

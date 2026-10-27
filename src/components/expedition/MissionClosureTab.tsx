@@ -2,7 +2,7 @@ import React from "react";
 import { LivraisonClient, Mission } from "../../types/Mission.types";
 
 // URL de base pour les fichiers uploadés
-const BASE_URL = "https://backsignup.h-tsoft.com/";
+const BASE_URL = "https://backsignup.h-tsoft.com";
 
 interface MissionClosureTabProps {
   mission: Mission;

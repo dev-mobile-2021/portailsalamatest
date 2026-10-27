@@ -39,7 +39,7 @@ const HomePage = () => {
   }, [user, navigate]);
   
   useEffect(() => {
-    fetch("https://backsignup.h-tsoft.com//graphql?query={typemarches{id,designation,description}}")
+    fetch("https://backsignup.h-tsoft.com/graphql?query={typemarches{id,designation,description}}")
       .then(res => res.json())
       .then(data => {
         if (data?.data?.typemarches) {

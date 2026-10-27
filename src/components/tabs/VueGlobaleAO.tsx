@@ -646,7 +646,7 @@ const VueGlobale: React.FC<VueGlobaleProps> = ({
       }`;
       
       const response = await fetch(
-        `https://backsignup.h-tsoft.com//graphql?query=${encodeURIComponent(query)}`
+        `https://backsignup.h-tsoft.com/graphql?query=${encodeURIComponent(query)}`
       );
       const data = await response.json();
       

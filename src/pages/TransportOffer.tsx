@@ -35,7 +35,7 @@ const TransportOffer = () => {
     // Vérifier si une soumission existe pour cette offre de transport
     if (user?.fournisseur_id && id) {
       fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={soumissiontrans(offretransport_id:"${id}",fournisseur_id:"${user.fournisseur_id}"){id,fournisseur{id}}}`
+        `https://backsignup.h-tsoft.com/graphql?query={soumissiontrans(offretransport_id:"${id}",fournisseur_id:"${user.fournisseur_id}"){id,fournisseur{id}}}`
       )
         .then(res => res.json())
         .then(data => {

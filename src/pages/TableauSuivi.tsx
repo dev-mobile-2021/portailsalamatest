@@ -84,7 +84,7 @@ const TableauSuivi = (props: { id?: string }) => {
 
     // Charger l'ID du DDP
     fetch(
-      "https://backsignup.h-tsoft.com//graphql?query={typeconditions{id,designation}}"
+      "https://backsignup.h-tsoft.com/graphql?query={typeconditions{id,designation}}"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -304,7 +304,7 @@ const TableauSuivi = (props: { id?: string }) => {
       };
 
       // 🔄 ÉTAPE 1: Récupérer les données de base (toujours fonctionne)
-      fetch(`https://backsignup.h-tsoft.com//graphql?query=${baseQuery}`)
+      fetch(`https://backsignup.h-tsoft.com/graphql?query=${baseQuery}`)
         .then((res) => res.json())
         .then((obj) => {
           // console.log("📊 [TableauSuivi] Données de base récupérées :", obj);
@@ -318,7 +318,7 @@ const TableauSuivi = (props: { id?: string }) => {
             // console.log("✅ [TableauSuivi] Données de base chargées");
 
             // 🔄 ÉTAPE 2: Tenter de récupérer les données enrichies avec specifications
-            fetch(`https://backsignup.h-tsoft.com//graphql?query=${enrichedQuery}`)
+            fetch(`https://backsignup.h-tsoft.com/graphql?query=${enrichedQuery}`)
               .then((res) => res.json())
               .then((enrichedObj) => {
                 // Vérifier si la requête enrichie a réussi (pas d'erreur GraphQL)
@@ -337,7 +337,7 @@ const TableauSuivi = (props: { id?: string }) => {
             // console.log("📄 [TableauSuivi] Récupération des documents fournis pour soumission ID:", soumission.id);
 
             fetch(
-              `https://backsignup.h-tsoft.com//graphql?query={soumissionspecdocuments(soumission_id:${soumission.id}){id,file,attachement_id,ao_id}}`
+              `https://backsignup.h-tsoft.com/graphql?query={soumissionspecdocuments(soumission_id:${soumission.id}){id,file,attachement_id,ao_id}}`
             )
               .then((res) => res.json())
               .then((docsObj) => {
@@ -372,8 +372,8 @@ const TableauSuivi = (props: { id?: string }) => {
     if (Data?.soumissionId) {
       // console.log("📊 [TableauSuivi] Vérification disponibilité API suivimarche pour soumission ID:", Data.soumissionId);
       fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={suiviemarches(soumission_id:${Data.soumissionId}){id,etat_text,etat_bc,acompte,totalbc,mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
-        // `https://backsignup.h-tsoft.com//graphql?query={suiviemarches(soumission_id:3){id,etat_text,etat_bc,acompte,totalbc,mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
+        `https://backsignup.h-tsoft.com/graphql?query={suiviemarches(soumission_id:${Data.soumissionId}){id,etat_text,etat_bc,acompte,totalbc,mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
+        // `https://backsignup.h-tsoft.com/graphql?query={suiviemarches(soumission_id:3){id,etat_text,etat_bc,acompte,totalbc,mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
 
       )
         .then((res) => res.json())

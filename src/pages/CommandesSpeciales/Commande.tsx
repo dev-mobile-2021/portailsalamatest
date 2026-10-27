@@ -137,9 +137,9 @@ export default function Commande() {
   useEffect(() => {
     setLoading((prev) => ({ ...prev, programmes: true }));
 
-    // fetch(`https://backsignup.h-tsoft.com//graphql?query={programmes{id,designation,objectif}}`)
+    // fetch(`https://backsignup.h-tsoft.com/graphql?query={programmes{id,designation,objectif}}`)
     fetch(
-      `https://backsignup.h-tsoft.com//graphql?query={programmes(client_id: ${user?.client_id || 0}){id,designation,objectif}}`,
+      `https://backsignup.h-tsoft.com/graphql?query={programmes(client_id: ${user?.client_id || 0}){id,designation,objectif}}`,
     )
       .then((response) => {
         if (!response.ok) {
@@ -218,10 +218,10 @@ export default function Commande() {
       }));
 
       // Fetch plannings cycliques for the selected programme
-      // fetch(`https://backsignup.h-tsoft.com//graphql?query={campagnes(programme_id:${numId},){id,date,designation,statut}}`)
+      // fetch(`https://backsignup.h-tsoft.com/graphql?query={campagnes(programme_id:${numId},){id,date,designation,statut}}`)
 
       fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={campagnes(programme_id:${numId},client_id:${user?.client_id || 0}){id,date,designation,statut}}`,
+        `https://backsignup.h-tsoft.com/graphql?query={campagnes(programme_id:${numId},client_id:${user?.client_id || 0}){id,date,designation,statut}}`,
       )
         .then((response) => {
           if (!response.ok) {
@@ -240,7 +240,7 @@ export default function Commande() {
               // Récupérer les articles du premier planning
               setLoading((prev) => ({ ...prev, articles: true }));
               fetch(
-                `https://backsignup.h-tsoft.com//graphql?query={campagnes(id:${firstPlanningId}){id,articlescampagnes{id,quantite,article{id,designation,quantite,description,code,unite{id,designation},image,prix}}}}`,
+                `https://backsignup.h-tsoft.com/graphql?query={campagnes(id:${firstPlanningId}){id,articlescampagnes{id,quantite,article{id,designation,quantite,description,code,unite{id,designation},image,prix}}}}`,
               )
                 .then((response) => {
                   if (!response.ok) {
@@ -377,7 +377,7 @@ export default function Commande() {
     setLoading((prev) => ({ ...prev, articles: true }));
 
     fetch(
-      `https://backsignup.h-tsoft.com//graphql?query={campagnes(id:${planningId}){id,articlescampagnes{id,quantite,article{id,designation,quantite,description,code,image,prix,unite{id,designation}}}}}`,
+      `https://backsignup.h-tsoft.com/graphql?query={campagnes(id:${planningId}){id,articlescampagnes{id,quantite,article{id,designation,quantite,description,code,image,prix,unite{id,designation}}}}}`,
     )
       .then((response) => {
         if (!response.ok) {

@@ -70,7 +70,7 @@ export const useBonDeCommande = ({
     
     try {
       const response = await fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={suiviemarches(soumission_id:${soumissionId}){id,etat_text,etat_bc,acompte,totalbc,detailsuiviemarches{id,motif_resiliation},mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
+        `https://backsignup.h-tsoft.com/graphql?query={suiviemarches(soumission_id:${soumissionId}){id,etat_text,etat_bc,acompte,totalbc,detailsuiviemarches{id,motif_resiliation},mntacompte,etat,etat_suivi_text,etat_suivi_badge}}`
       );
       const data = await response.json();
       const info = data?.data?.suiviemarches?.[0];
@@ -114,7 +114,7 @@ export const useBonDeCommande = ({
     });
     
     if (codeFournisseur && referenceAO) {
-      const generatedUrl = `https://backsignup.h-tsoft.com//pdf.generate-pdf-bc/BPSNUM_0:"${codeFournisseur}",YNUMMARCHE_0:"${referenceAO}"`;
+      const generatedUrl = `https://backsignup.h-tsoft.com/pdf.generate-pdf-bc/BPSNUM_0:"${codeFournisseur}",YNUMMARCHE_0:"${referenceAO}"`;
       setPdfUrl(generatedUrl);
       console.log("📄 [useBonDeCommande] URL du PDF générée:", generatedUrl);
     } else {
@@ -152,7 +152,7 @@ export const useBonDeCommande = ({
     });
 
     try {
-      const response = await fetch("https://backsignup.h-tsoft.com//suiviemarche/status", {
+      const response = await fetch("https://backsignup.h-tsoft.com/suiviemarche/status", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -222,7 +222,7 @@ export const useBonDeCommande = ({
     });
 
     try {
-      const response = await fetch("https://backsignup.h-tsoft.com//suiviemarche/status", {
+      const response = await fetch("https://backsignup.h-tsoft.com/suiviemarche/status", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

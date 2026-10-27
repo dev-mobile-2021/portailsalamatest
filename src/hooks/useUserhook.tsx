@@ -3,6 +3,7 @@ import { AuthContextType, Fournisseur, User } from "../types/user.types";
 import Spiner from "../components/const/Spiner";
 import { toast } from "react-toastify";
 import { restClient } from "../api/client";
+import { API_URL } from "../utils/variable";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -102,7 +103,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             // Récupérer les détails du fournisseur si l'utilisateur en a un
             if (utilisateur?.fournisseur_id) {
                 const fournisseurResponse = await fetch(
-                    `https://backsignup.h-tsoft.com//graphql?query={fournisseurs(id: ${utilisateur.fournisseur_id}){id,TSSCOD_0_0,nom,adresse,telephone,email,categoriefournisseur_id,categoriefournisseur{id,designation},typefournisseur{id,designation},typefournisseur_id,code,score,ca_annuel,pays_id}}`
+                    `${API_URL}graphql?query={fournisseurs(id: ${utilisateur.fournisseur_id}){id,TSSCOD_0_0,nom,adresse,telephone,email,categoriefournisseur_id,categoriefournisseur{id,designation},typefournisseur{id,designation},typefournisseur_id,code,score,ca_annuel,pays_id}}`
                 );
                 
                 const fournisseurData = await fournisseurResponse.json();

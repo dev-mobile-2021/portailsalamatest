@@ -36,7 +36,7 @@ const Tender = () => {
        if(tender?.typemarche?.designation === "Achat Direct") {
       setIsAchatDirect(true);
     }
-      fetch(`https://backsignup.h-tsoft.com//graphql?query={soumissions(fournisseur_id:${user.fournisseur_id},ao_id:${tender.id}){id}}`)
+      fetch(`https://backsignup.h-tsoft.com/graphql?query={soumissions(fournisseur_id:${user.fournisseur_id},ao_id:${tender.id}){id}}`)
         .then(res => res.json())
         .then(data => {
           console.log("Données de soumission :", data);

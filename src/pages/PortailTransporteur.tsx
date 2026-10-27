@@ -69,7 +69,7 @@ const PortailTransporteur = () => {
     setDownloadingId(mission.id);
     try {
       const response = await fetch(
-        `https://backsignup.h-tsoft.com//pdf.generate-pdf-bcfournisseur/${mission.expedition_id}/${user?.fournisseur_id}`,
+        `https://backsignup.h-tsoft.com/pdf.generate-pdf-bcfournisseur/${mission.expedition_id}/${user?.fournisseur_id}`,
         {
           method: "GET",
           headers: { Accept: "application/pdf" },

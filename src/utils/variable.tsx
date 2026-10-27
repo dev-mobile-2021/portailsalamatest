@@ -6,6 +6,8 @@ import { PAYS } from "../assets/json/All countries";
 export const COUNT = 10;
 export const PAGE = 1;
 export const BASE_URL = import.meta.env.VITE_BASE_URL;
+// En dev, l'API est jointe via le proxy Vite (voir vite.config.ts) pour éviter le CORS
+export const API_URL = import.meta.env.DEV ? '/' : BASE_URL;
 
 // Animation.js
 

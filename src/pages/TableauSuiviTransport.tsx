@@ -96,7 +96,7 @@ const TableauSuiviTransport = (props: { id?: string }) => {
     if (id && user?.fournisseur_id) {
       // Récupérer la soumission transport avec la nouvelle requête
       fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={soumissiontrans(offretransport_id:"${id}",fournisseur_id:"${user.fournisseur_id}"){id,reference,date_soumission,montant_total,commentaire,vehiculesoumissions{id,vehicule{id,matricule,marque,typevehicule{designation},chauffeur{id,nom,telephone}}},fournisseur{id,nom,code,email,telephone},offretransport{id,reference,designation},detailsoumissiontrans{id,axe_id,delai_livraison,commentaire,axe{id,designation},soumissiontonnages{id,tonnage_id,prix_unitaire,quantite,montant_total,tonnage{id,designation}}},soumissiontransdocuments{id,file,designation,date_upload,offretransportdocspecifi{id,designation}}}}`
+        `https://backsignup.h-tsoft.com/graphql?query={soumissiontrans(offretransport_id:"${id}",fournisseur_id:"${user.fournisseur_id}"){id,reference,date_soumission,montant_total,commentaire,vehiculesoumissions{id,vehicule{id,matricule,marque,typevehicule{designation},chauffeur{id,nom,telephone}}},fournisseur{id,nom,code,email,telephone},offretransport{id,reference,designation},detailsoumissiontrans{id,axe_id,delai_livraison,commentaire,axe{id,designation},soumissiontonnages{id,tonnage_id,prix_unitaire,quantite,montant_total,tonnage{id,designation}}},soumissiontransdocuments{id,file,designation,date_upload,offretransportdocspecifi{id,designation}}}}`
       )
         .then((res) => res.json())
         .then((obj) => {

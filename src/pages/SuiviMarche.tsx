@@ -22,7 +22,7 @@ const SuiviMarche = () => {
 
   // Récupérer les types de marchés
   useEffect(() => {
-    fetch("https://backsignup.h-tsoft.com//graphql?query={typemarches{id,designation,description}}")
+    fetch("https://backsignup.h-tsoft.com/graphql?query={typemarches{id,designation,description}}")
       .then(res => res.json())
       .then(data => {
         if (data?.data?.typemarches) {
@@ -36,7 +36,7 @@ const SuiviMarche = () => {
     if (user?.fournisseur_id) {
       setLoading(true);
       fetch(
-        `https://backsignup.h-tsoft.com//graphql?query={soumissions(fournisseur_id:${user.fournisseur_id}){id,date,ao_id,ao{id,reference,datecloture,datepublication,targetpricestatus,typemarche{id,designation},aoarticles{id,article{id,designation}}}}}`
+        `https://backsignup.h-tsoft.com/graphql?query={soumissions(fournisseur_id:${user.fournisseur_id}){id,date,ao_id,ao{id,reference,datecloture,datepublication,targetpricestatus,typemarche{id,designation},aoarticles{id,article{id,designation}}}}}`
       )
         .then((res) => res.json())
         .then((data) => {

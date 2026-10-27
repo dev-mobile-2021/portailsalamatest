@@ -1,16 +1,16 @@
 // api/client.ts
 import axios from 'axios';
-import { BASE_URL } from '../utils/variable';
+import { API_URL } from '../utils/variable';
 
 export const graphQLClient = axios.create({
-    baseURL: BASE_URL + 'graphql',
+    baseURL: API_URL + 'graphql',
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
 export const restClient = axios.create({
-    baseURL: BASE_URL,
+    baseURL: API_URL,
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',

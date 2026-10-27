@@ -67,7 +67,7 @@ const FormulaireSoumission = () => {
 
     // Charger les termes commerciaux pour récupérer l'ID du DDP
     fetch(
-      "https://backsignup.h-tsoft.com//graphql?query={typeconditions{id,designation}}"
+      "https://backsignup.h-tsoft.com/graphql?query={typeconditions{id,designation}}"
     )
       .then((res) => res.json())
       .then((data) => {
