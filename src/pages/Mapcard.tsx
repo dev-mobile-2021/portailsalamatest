@@ -60,7 +60,7 @@ const SearchAndMap = () => {
                         radius: 50,
                         type: "establishment",
                     },
-                    (placesResults, placesStatus) => {
+                    (placesResults: google.maps.places.PlaceResult[] | null, placesStatus: google.maps.places.PlacesServiceStatus) => {
                         if (placesStatus === google.maps.places.PlacesServiceStatus.OK && placesResults && placesResults.length > 0) {
                             const nearestPlace = placesResults[0]; // Prendre le lieu le plus proche
 
